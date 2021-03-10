@@ -17,18 +17,18 @@ export class UserModule {
     consumer
       .apply(UserMiddleware)
       .forRoutes(
-        { path: 'api/me', method: RequestMethod.GET },
-        { path: 'api/users', method: RequestMethod.GET },
-        { path: 'api/logout', method: RequestMethod.GET },
-        { path: 'api/:username/image', method: RequestMethod.POST },
+        { path: 'api/auth/me', method: RequestMethod.GET },
+        { path: 'api/auth/users', method: RequestMethod.GET },
+        { path: 'api/auth/logout', method: RequestMethod.GET },
+        { path: 'api/auth/:username/image', method: RequestMethod.POST },
       );
     consumer
       .apply(AuthMiddleware)
       .forRoutes(
-        { path: 'api/me', method: RequestMethod.GET },
-        { path: 'api/users', method: RequestMethod.GET },
-        { path: 'api/logout', method: RequestMethod.GET },
-        { path: 'api/:username/image', method: RequestMethod.POST },
+        { path: 'api/auth/me', method: RequestMethod.GET },
+        { path: 'api/auth/users', method: RequestMethod.GET },
+        { path: 'api/auth/logout', method: RequestMethod.GET },
+        { path: 'api/auth/:username/image', method: RequestMethod.POST },
       );
   }
 }
